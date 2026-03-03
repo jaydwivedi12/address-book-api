@@ -1,9 +1,18 @@
 from fastapi import FastAPI
 
+from app.db.base import Base
+from app.db.session import engine
+
 app = FastAPI(
     title="Address Book API",
     version="1.0.0"
 )
+
+
+@app.on_event("startup")
+def on_startup() -> None:
+    Base.metadata.create_all(bind=engine)
+
 
 @app.get("/health")
 def health_check() -> dict[str, str]:
