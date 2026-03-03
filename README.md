@@ -169,7 +169,37 @@ All configuration is externalized using environment variables.
 
 * `DATABASE_URL`
 
----
+
+
+## Testing
+
+This project includes automated tests using:
+
+- pytest
+- FastAPI TestClient
+
+### Run tests
+
+Make sure your virtual environment is activated, then run:
+
+```bash
+pytest
+```
+
+### Expected output
+
+```
+3 passed
+```
+
+### What is tested?
+
+* Successful address creation
+* Retrieval of stored addresses
+* Nearby search functionality
+
+The test suite validates core API behavior and helps prevent regressions.
+
 
 ##  Health Check
 
