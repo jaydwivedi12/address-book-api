@@ -93,7 +93,6 @@ DATABASE_URL=sqlite:///./address.db
 ```
 
 
-
 ## 5. Run the application
 
 ```bash
@@ -110,6 +109,24 @@ http://127.0.0.1:8000/docs
 ```
 
 
+# 🐳 Running with Docker
+
+## Build the image
+
+```bash
+docker build -t address-book-api .
+```
+
+## Run the container
+```bash
+docker run -p 8000:8000 --env-file .env address-book-api
+```
+
+***API will be availabe at:***
+
+```
+http://127.0.0.1:8000/docs
+```
 
 # API Endpoints
 
