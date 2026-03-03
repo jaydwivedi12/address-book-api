@@ -1,7 +1,9 @@
 from fastapi import FastAPI
-
+from app.core.logging import setup_logging
 from app.db.base import Base
 from app.db.session import engine
+
+setup_logging()
 
 app = FastAPI(
     title="Address Book API",
